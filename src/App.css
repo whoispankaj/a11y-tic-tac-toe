@@ -80,6 +80,11 @@ main {
   background: #ddd;
 }
 
+/*.square:focus{
+  box-shadow: rgb(255 255 255) 0px 0px 0px 2px, rgb(8 117 225) 0px 0px 2px 4px;
+  outline: 2px dotted transparent;
+  outline-offset: 2px;
+}*/
 /*
 .square:focus {
   box-shadow: 0 0 0 2px #ffffff, 0 0 3px 5px royalblue;
@@ -136,6 +141,13 @@ table caption {
   font-size: 20px;
   margin-bottom: 10px;
 }
+/*
+.reset-button:focus {
+  box-shadow: rgb(255 255 255) 0px 0px 0px 2px, rgb(8 117 225) 0px 0px 2px 4px;
+  outline: 2px dotted transparent;
+  outline-offset: 2px;
+}
+*/
 /*
 .reset-button:focus {
   box-shadow: 0 0 0 2px #ffffff, 0 0 3px 5px royalblue;
