@@ -44,7 +44,7 @@ const Game = () => {
     const winner = calculateWinner(state.history[state.history.length - 1].squares);
     let status;
     if (winner) {
-        status = `Game Over. Winner is, Player ${winner}`;
+        status = `Game Over. Winner is Player ${winner}`;
     } else {
         status = "Player " + (state.xIsNext ? "X" : "0") + ' turn';
     }
@@ -113,7 +113,7 @@ const Game = () => {
                 <div className="game">
                     <button className="reset-button" onClick={clickHandler} onKeyUp={resetButtonHandler}>New Game
                     </button>
-                    <div className="game-info" aria-live="assertive" role="status">
+                    <div className="game-info" aria-live="assertive" role="status" style={{"display": "none"}}>
                         {status}
                     </div>
                     <div className="game-board">
