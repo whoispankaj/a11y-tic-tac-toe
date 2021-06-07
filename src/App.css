@@ -1,153 +1,150 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
-  padding:0;
-  margin: 0;
+    font: 14px "Century Gothic", Futura, sans-serif;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
 .container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
 }
 
 header {
-  width: 100%;
-  height: 100px;
-  background: royalblue;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: 100px;
+    background: royalblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
-  text-align: center;
-  font-size: 50px;
+    text-align: center;
+    font-size: 50px;
 }
 
 main {
-  width: 100%;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .game-container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+    clear: both;
+    content: "";
+    display: table;
 }
 
 .square-container {
-  padding: 12px;
-  border: 1px solid darkgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    padding: 12px;
+    border: 1px solid darkgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .square {
-  border: none;
-  font-size: 50px;
-  font-weight: bold;
-  height: 150px;
-  width: 150px;
-  margin-right: -3px;
-  margin-top: -3px;
-  padding: 0;
-  /*text-align: center;*/
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    border: none;
+    font-size: 50px;
+    font-weight: bold;
+    height: 150px;
+    width: 150px;
+    margin-right: -3px;
+    margin-top: -3px;
+    padding: 0;
+    /*text-align: center;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-.square:hover,.square:focus {
-  outline: none;
-  background: #ddd;
+.square:hover, .square:focus {
+    outline: none;
+    background: #ddd;
 }
 
-/*.square:focus{
-  box-shadow: rgb(255 255 255) 0px 0px 0px 2px, rgb(8 117 225) 0px 0px 2px 4px;
-  outline: 2px dotted transparent;
-  outline-offset: 2px;
-}*/
-/*
+/* Enable focus ring for keyboard users*/
 .square:focus {
-  box-shadow: 0 0 0 2px #ffffff, 0 0 3px 5px royalblue;
-  outline: 2px dotted transparent;
-  outline-offset: 2px;
+    box-shadow: rgb(255 255 255) 0px 0px 0px 2px, rgb(8 117 225) 0px 0px 2px 4px;
+    outline: 2px dotted transparent;
+    outline-offset: 2px;
 }
-*/
 
 .square:active {
-  background-color: #393737;
-  color: white;
+    background-color: #393737;
+    color: white;
 }
 
 .game {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .game-info {
-  height: 50px;
-  background-color: green;
-  color: white;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-  margin-bottom: 5px;
+    height: 50px;
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    margin-bottom: 5px;
 }
 
 table {
-  table-layout: fixed;
-  border-collapse: collapse;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
 table caption {
-  margin: 10px;
-  font-size: 32px;
+    margin: 10px;
+    font-size: 32px;
 }
 
 .hidden {
-  position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .reset-button {
-  height: 50px;
-  /*background-color: black;*/
-  background-color: gray;
-  color: white;
-  font-size: 20px;
-  margin-bottom: 10px;
+    height: 50px;
+    background-color: black;
+    /* color contrast issue */
+    /* background-color: gray;*/
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
-/*
+
+/* Enable focus ring for keyboard users*/
 .reset-button:focus {
-  box-shadow: rgb(255 255 255) 0px 0px 0px 2px, rgb(8 117 225) 0px 0px 2px 4px;
-  outline: 2px dotted transparent;
-  outline-offset: 2px;
+    box-shadow: rgb(255 255 255) 0px 0px 0px 2px, rgb(8 117 225) 0px 0px 2px 4px;
+    outline: 2px dotted transparent;
+    outline-offset: 2px;
 }
-*/
+
 /*
 .reset-button:focus {
   box-shadow: 0 0 0 2px #ffffff, 0 0 3px 5px royalblue;

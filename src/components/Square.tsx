@@ -16,51 +16,57 @@ rowLabelsMap.set(7, 'Third Row, Second Column');
 rowLabelsMap.set(8, 'Third Row, Third Column');
 
 interface SquareProps {
-    index: number;
-    value: string;
-    onSelect: (squareNumber: number) => void;
+  index: number;
+  value: string;
+  onSelect: (squareNumber: number) => void;
 }
 
 const Square = (props: SquareProps) => {
-    const emptyInfo = <span className="hidden">Empty Square</span>;
-    const {index, value, onSelect} = props;
-    const clickHandler: React.MouseEventHandler = event => {
-        event.stopPropagation();
-        onSelect(index);
-    };
+  const emptyInfo = <span className="hidden">Empty Square</span>;
+  const {index, value, onSelect} = props;
+  const clickHandler: React.MouseEventHandler = event => {
+    event.stopPropagation();
+    onSelect(index);
+  };
 
-    const isSpaceKey = (event: React.KeyboardEvent<Element>) => {
-        return event.key === ' ' || event.code === 'Space' || event.which === SPACE_KEY;
-    };
+  const isSpaceKey = (event: React.KeyboardEvent<Element>) => {
+    return event.key === ' ' || event.code === 'Space' || event.which === SPACE_KEY;
+  };
 
-    const isEnterKey = (event: React.KeyboardEvent<Element>) => {
-        return event.key === 'Enter' || event.code === 'Enter' || event.which === ENTER_KEY;
-    };
+  const isEnterKey = (event: React.KeyboardEvent<Element>) => {
+    return event.key === 'Enter' || event.code === 'Enter' || event.which === ENTER_KEY;
+  };
 
-    const isSpaceOrEnterKey = (event: React.KeyboardEvent<Element>) => {
-        return isEnterKey(event) || isSpaceKey(event);
-    };
+  const isSpaceOrEnterKey = (event: React.KeyboardEvent<Element>) => {
+    return isEnterKey(event) || isSpaceKey(event);
+  };
 
-    const keyUpHandler: React.KeyboardEventHandler = event => {
-        event.stopPropagation();
-        if(isSpaceOrEnterKey(event)) {
-            onSelect(index);
-        }
-    };
+  const keyUpHandler: React.KeyboardEventHandler = event => {
+    event.stopPropagation();
+    if (isSpaceOrEnterKey(event)) {
+      onSelect(index);
+    }
+  };
 
-    const getAriaLabel = () => {
-        let label: string = rowLabelsMap.get(index);
-        label = label + ', Value ' + ( value ? value : 'Empty');
-        return label;
-    };
+  const getAriaLabel = () => {
+    let label: string = rowLabelsMap.get(index);
+    label = label + ', Value ' + (value ? value : 'Empty');
+    return label;
+  };
 
-    return (
-        <div className="square-container">
-            <button className="square" onClick={clickHandler} onKeyDown={keyUpHandler} aria-label={getAriaLabel()}>
+  return (
+      <div className="square-container">
+        <button className="square" onClick={clickHandler} onKeyDown={keyUpHandler} aria-label={getAriaLabel()}>
+          {value || emptyInfo}
+        </button>
+        {/*
+ Enable Keyboard navigation
+            <div className="square" onClick={clickHandler}>
                 {value || emptyInfo}
             </button>
-        </div>
-    );
+*/}
+      </div>
+  );
 }
 
 export default Square;

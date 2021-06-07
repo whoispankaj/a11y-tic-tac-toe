@@ -7,7 +7,6 @@ function App() {
       <div className="game-container">
         <Game/>
       </div>
-
   );
 }
 
